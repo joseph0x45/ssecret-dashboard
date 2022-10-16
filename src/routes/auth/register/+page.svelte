@@ -1,5 +1,36 @@
 <script lang="ts" >
 import axios from "axios"
+import type { AxiosResponse } from "axios"
+
+let email = ""
+let password = ""
+let loading = false
+let error = [false, ""]
+
+$: errorState = error
+$: loadingState = loading
+
+async function register() {
+    const params = {
+        email,
+        password
+    }
+    const registrationResponse = await axios.post(
+        "http://localhost:3000/auth/register",
+        params
+    )
+    .then((res)=>res)
+    .catch((err)=>err.response)
+    if(registrationResponse.status==200){
+        localStorage.setItem("ssecretId", registrationResponse.data.token)
+        window.location.href = "/"
+    }
+    if(registrationResponse.status==409){
+        error=[true, registrationResponse.data.message]
+        return
+    }
+
+}
 
 
 </script>
@@ -10,8 +41,16 @@ import axios from "axios"
     </h1>
     <p class=" text-xl mb-4" >Create your SuperSecret Account</p>
     <div class="flex flex-col gap-5 text-slate-600 " >
-        <input class=" rounded-md w-96 focus:outline-none p-1" placeholder="Enter your mail" type="text">
-        <input class=" rounded-md w-96 focus:outline-none p-1" placeholder="Your super secret password" type="text">
+        <input bind:value={email} class=" rounded-md w-96 focus:outline-none p-1" placeholder="Enter your mail" type="email">
+        <input bind:value={password} class=" rounded-md w-96 focus:outline-none p-1" placeholder="Your super secret password" type="password">
+        <button on:click={register} class=" text-white bg-blue-400 rounded p-1 my-3">
+            Register
+        </button>
+        {#if error}
+        <p class="text-red-500 text-center" >
+            {error[1]}
+        </p>
+        {/if}
     </div>
-    <p>Already have an account? <a href="/auth/login" class="text-blue-400">login instead</a> </p>
+    <p>Already have an account? <a href="/auth/login" class="text-blue-400">Login instead</a> </p>
 </div>
