@@ -23,7 +23,7 @@
         console.log(loginResponse);
 		if (loginResponse.status == 200) {
             localStorage.removeItem("ssecretId")
-			localStorage.setItem('ssecretId', loginResponse.data.token);
+			localStorage.setItem('ssecretId', loginResponse.data.authToken);
 			window.location.href = '/';
 		}
 		if (loginResponse.status == 404) {
