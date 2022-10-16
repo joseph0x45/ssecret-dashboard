@@ -7,10 +7,9 @@ let password = ""
 let loading = false
 let error = [false, ""]
 
-$: errorState = error
-$: loadingState = loading
 
 async function register() {
+    loading = true
     const params = {
         email,
         password
@@ -44,7 +43,12 @@ async function register() {
         <input bind:value={email} class=" rounded-md w-96 focus:outline-none p-1" placeholder="Enter your mail" type="email">
         <input bind:value={password} class=" rounded-md w-96 focus:outline-none p-1" placeholder="Your super secret password" type="password">
         <button on:click={register} class=" text-white bg-blue-400 rounded p-1 my-3">
-            Register
+            {#if loading}
+                <p>Loading</p>
+            {:else}
+                <p>Register</p>
+            {/if}
+
         </button>
         {#if error}
         <p class="text-red-500 text-center" >
