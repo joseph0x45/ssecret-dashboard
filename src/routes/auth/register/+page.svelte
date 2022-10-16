@@ -1,6 +1,5 @@
 <script lang="ts" >
 import axios from "axios"
-import type { AxiosResponse } from "axios"
 
 let email = ""
 let password = ""
