@@ -1,6 +1,7 @@
 <script lang="ts" >
     import axios from "axios"
 
+    let email = ""
 
 
 </script>

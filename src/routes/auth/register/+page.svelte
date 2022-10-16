@@ -9,6 +9,10 @@ let error = [false, ""]
 
 
 async function register() {
+    if(email=="" || password==""){
+        error = [true, "Both fields are required"]
+        return
+    }
     loading = true
     const params = {
         email,
