@@ -8,6 +8,7 @@
 
 	onMount(async () => {
 		if (browser) {
+			window.location.href = '/about';
 			if (!localStorage.getItem('ssecretId')) {
 				window.location.href = '/auth/login';
 			}
