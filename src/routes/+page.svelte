@@ -7,8 +7,8 @@
 	let username: string;
 
 	onMount(async () => {
+		window.location.href = '/about';
 		if (browser) {
-			window.location.href = '/about';
 			if (!localStorage.getItem('ssecretId')) {
 				window.location.href = '/auth/login';
 			}
