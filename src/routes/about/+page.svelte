@@ -5,9 +5,7 @@
     let githubHandle: string = ""
 
     let requestedDev= false
-    let requestError = false
     let joinedList= false
-    let joinError = false
 
     async function requestAccess(){
         if(email=="" || githubHandle=="" ){
@@ -18,15 +16,13 @@
             email,
             githubHandle
         }
-        const response = await axios.post(
+        axios.post(
             url,
             params
-        ).then((res)=>res.data)
-        if(response.status==200) {
-            requestedDev=true
-            return
-        }
-        requestError = true
+        )
+        let requestedDev= true
+
+        
     }
 
     async function joinWaitlist(){
@@ -37,15 +33,12 @@
         const params = {
             email
         }
-        const response = await axios.post(
+        axios.post(
             url,
             params
-        ).then((res)=>res.data)
-        if(response.status==200){
-             joinedList=true
-             return
-        }
-        joinError = true
+        )
+        let joinedList= true
+
     }
 
 
@@ -140,9 +133,6 @@
         <p class=" text-center text-xl" >Fill this form to have access to the code when the app is released</p>
         <input bind:value={email} class=" p-2 focus:outline-none text-slate-600 rounded-md" placeholder="Your email" type="text">
         <input bind:value={githubHandle} class=" p-2 focus:outline-none text-slate-600 rounded-md" placeholder="Your GitHub handle" type="text">
-        {#if requestError}
-        <span class=" text-red-500 text-center" >Something went wrong :( Please retry</span>
-        {/if}
         <button disabled={requestedDev} on:click={requestAccess} class=" bg-green-500 w-2/5 m-auto p-2 rounded-md hover:scale-110 ease-in duration-200" >
             { requestedDev?" We got you :) ": "Request access to the code"}
         </button>
@@ -154,9 +144,6 @@
     <div class=" flex flex-col w-2/5 m-auto space-y-5 " >
         <p class=" text-center text-xl" >SuperSecret will be available the next week end. Join the waitlist to be notified when it goes live </p>
         <input bind:value={email} class=" p-2 focus:outline-none text-slate-600 rounded-md" placeholder="Your email" type="text">
-        {#if joinError}
-        <span class=" text-red-500 text-center" >Something went wrong :( Please retry</span>
-        {/if}
         <button on:click={joinWaitlist} class=" bg-green-500 w-2/5 m-auto p-2 rounded-md hover:scale-110 ease-in duration-200" >
             { joinedList?" Thanks :) ": "Join the waitlist"}
         </button>
