@@ -5,3 +5,12 @@
 body{
     @apply bg-slate-600;
 }
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body{
+    -msoverflow-style: none;
+    scrollbar-width: none;
+}
