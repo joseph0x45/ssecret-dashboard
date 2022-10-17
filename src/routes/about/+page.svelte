@@ -20,8 +20,9 @@
             url,
             params
         )
-        let requestedDev= true
-
+        requestedDev= true
+        email=""
+        githubHandle=""
         
     }
 
@@ -37,7 +38,8 @@
             url,
             params
         )
-        let joinedList= true
+        joinedList= true
+        email=""
 
     }
 
