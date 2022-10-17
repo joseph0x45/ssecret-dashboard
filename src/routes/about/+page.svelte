@@ -31,7 +31,7 @@
 
     async function joinWaitlist(){
         if(email==""){
-            alert("Email can't be empty")
+            alert("Email can't be empty") 
             return
         }
         const params = {
