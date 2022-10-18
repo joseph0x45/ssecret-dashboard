@@ -48,9 +48,9 @@
 
 <div class=" flex flex-col  w-full text-white p-4">
 	<!-- Header -->
-	<div class=" flex justify-around w-full items-baseline mb-3">
-		<div class=" text-3xl font-extrabold ">ᕙSuperSecretᕗ</div>
-		<div class=" flex justify-between gap-5">
+	<div class="  text-xs lg:text-3xl flex justify-around w-full items-baseline mb-3">
+		<div class="  font-extrabold ">ᕙSuperSecretᕗ</div>
+		<div class="gap-3 flex justify-between ">
 			<div >
                 <a href="#dev">
                     Developers
@@ -128,14 +128,14 @@
     </div>
 
     <!-- Request access to the code -->
-    <div id="dev" class=" text-4xl text-center my-20 text-green-500" >
+    <div id="dev" class=" lg:text-4xl text-center my-20 text-green-500" >
         {"</>"} It's OpenSource :) so you can see that we can't see your secrets {"</>"}
     </div>
     <div class=" flex flex-col w-2/5 m-auto space-y-5 " >
-        <p class=" text-center text-xl" >Fill this form to have access to the code when the app is released</p>
+        <p class=" text-center text-xs lg:text-xl" >Fill this form to have access to the code when the app is released</p>
         <input bind:value={email} class=" p-2 focus:outline-none text-slate-600 rounded-md" placeholder="Your email" type="text">
         <input bind:value={githubHandle} class=" p-2 focus:outline-none text-slate-600 rounded-md" placeholder="Your GitHub handle" type="text">
-        <button disabled={requestedDev} on:click={requestAccess} class=" bg-green-500 w-2/5 m-auto p-2 rounded-md hover:scale-110 ease-in duration-200" >
+        <button disabled={requestedDev} on:click={requestAccess} class=" text-xs bg-green-500  lg:w-2/5 m-auto p-2 rounded-md hover:scale-110 ease-in duration-200" >
             { requestedDev?" We got you :) ": "Request access to the code"}
         </button>
     </div>
@@ -144,9 +144,9 @@
         Join the waitlist
     </div>
     <div class=" flex flex-col w-2/5 m-auto space-y-5 " >
-        <p class=" text-center text-xl" >SuperSecret will be available the next week end. Join the waitlist to be notified when it goes live </p>
+        <p class=" text-center text-xs lg:text-xl" >SuperSecret will be available the next week end. Join the waitlist to be notified when it goes live </p>
         <input bind:value={email} class=" p-2 focus:outline-none text-slate-600 rounded-md" placeholder="Your email" type="text">
-        <button on:click={joinWaitlist} class=" bg-green-500 w-2/5 m-auto p-2 rounded-md hover:scale-110 ease-in duration-200" >
+        <button on:click={joinWaitlist} class=" bg-green-500  lg:w-2/5 m-auto p-2 rounded-md hover:scale-110 ease-in duration-200" >
             { joinedList?" Thanks :) ": "Join the waitlist"}
         </button>
     </div>
