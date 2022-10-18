@@ -48,8 +48,8 @@
 
 <div class=" flex flex-col  w-full text-white p-4">
 	<!-- Header -->
-	<div class="  text-xs lg:text-3xl flex justify-around w-full items-baseline mb-3">
-		<div class="  font-extrabold ">ᕙSuperSecretᕗ</div>
+	<div class="  text-xs lg:text-xl flex justify-around w-full items-baseline mb-3">
+		<div class="  font-extrabold lg:text-3xl">ᕙSuperSecretᕗ</div>
 		<div class="gap-3 flex justify-between ">
 			<div >
                 <a href="#dev">
