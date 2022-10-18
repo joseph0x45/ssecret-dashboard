@@ -1,6 +1,6 @@
 <script lang="ts" >
     import axios from "axios"
-    const url = "https://maillogger.onrender.com/store"
+    const url = "https://web-production-22d3.up.railway.app/store"
     let email: string = ""
     let githubHandle: string = ""
 
