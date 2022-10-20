@@ -6,22 +6,7 @@
 	let userProjects: projectObject[] = [];
 	let username: string;
 
-	onMount(async () => {
-		window.location.href = '/about';
-		if (browser) {
-			if (!localStorage.getItem('ssecretId')) {
-				window.location.href = '/auth/login';
-			}
-			const fetchProjectsResult = (await fetchProjects()) as [projectObject];
-			const usernameResult = await fetchUsername();
-			username = usernameResult;
-			let projectstmp: projectObject[] = [];
-			fetchProjectsResult.map((project) => {
-				projectstmp.push(project);
-			});
-			userProjects = projectstmp;
-		}
-	});
+	
 
 	async function fetchProjects() {
 		return await axios
@@ -57,3 +42,7 @@
         _id: string
 	}
 </script>
+
+<div>
+	bruh
+</div>
