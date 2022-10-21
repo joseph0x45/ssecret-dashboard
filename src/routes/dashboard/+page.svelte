@@ -90,14 +90,21 @@
     }
 </script>
 
-<div class="fixed w-full h-full bg-slate-100" >
+
+    <!-- nav bar -->
+    <!-- <nav class="z-50 sticky top-0 w-full h-24 sm:h-32 px-4 flex justify-between items-center border-b border-slate-300 dark:border-slate-700 bg-slate-200  dark:bg-slate-900" >
+        <h2 class="font-bold poppins text-3xl sm:text-4xl xl:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500 transition-all ">SuperSecret</h2>
+        <h2 class="text-slate-800 dark:text-slate-300 font-medium rounded-full p-1 px-2 bg-slate-300 dark:bg-slate-800 text-[12px] sm:text-[14px] md:text-[16px] transition-all" >{userEmail}</h2>
+    </nav> -->
 
     <!-- main content -->
-    <div class="w-full h-full z-0 bg-slate-100 dark:bg-slate-800 p-4 overflow-y-auto pb-36" >
-        <div class="w-full flex pb-4 border-b border-slate-400 dark:border-slate-600 items-center ">
-            <h1 class="text-3xl font-bold text-slate-700 dark:text-slate-300" >My projects</h1>
-            <button on:click={toggleShow} class="ml-6 p-1 px-4 rounded-full bg-blue-100 dark:bg-slate-700 text-blue-400 dark:text-slate-400 hover:bg-blue-200 dark:hover:bg-slate-600 hover:text-blue-500 dark:hover:text-blue-300 transition-all" >New+</button>
-        </div>
+<div class="w-full h-full z-0 bg-slate-100 dark:bg-slate-800 p-4 overflow-y-auto pb-36" >
+    <!-- top bar -->
+    <div class="w-full flex pb-4 border-b border-slate-400 dark:border-slate-600 items-center ">
+        <h1 class="text-3xl font-bold text-slate-700 dark:text-slate-300" >My projects</h1>
+        <span class="fa-solid fa-user"></span>
+        <button on:click={toggleShow} class="ml-6 p-1 px-4 rounded-full bg-blue-100 dark:bg-slate-700 text-blue-400 dark:text-slate-400 hover:bg-blue-200 dark:hover:bg-slate-600 hover:text-blue-500 dark:hover:text-blue-300 transition-all" >New+</button>
+    </div>
 
         <!-- projects container -->
         <div class="flex flex-wrap mt-4 p-4 transition-all  " >
@@ -125,10 +132,6 @@
                 {/if}
             {/await}    
 
-            
-
-            
-
             <!-- project create box -->
             <div  class={`${ showForm ? 'grow sm:grow-0 order-first sm:order-none w-60 h-48 rounded-xl border-2 p-4 m-2 border-slate-400 dark:border-slate-600 bg-slate-200 bg-slate-700 flex flex-col justify-center transition-all ' : 'hidden' }`} >
                 <input bind:value={projectName}  type="text" placeholder="New project name" class="rounded-lg px-2 w-full h-8 text-[15px] bg-slate-100 dark:bg-slate-600 focus:outline-none focus:border focus:border-slate-300 dark:focus:border-slate-500 dark:caret-slate-300 dark:text-slate-300" />
@@ -142,9 +145,8 @@
                 <span class="bg-slate-300 dark:bg-slate-700 dark:group-hover:bg-slate-600 text-slate-400 dark:text-slate-500 group-hover:text-slate-500 dark:group-hover:text-slate-400 text-xl rounded-full px-4" >New</span>
             </div>
 
-        </div>
-
     </div>
 
-
 </div>
+
+
