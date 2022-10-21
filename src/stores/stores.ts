@@ -12,3 +12,6 @@ interface IUserProject{
 
 let userProjectsArray : IUserProject[] = []
 export const projects = writable(userProjectsArray)
+
+let userSecretsArray: { key:string, value:string }[] = []
+export const secrets = writable(userSecretsArray)

@@ -9,7 +9,7 @@
     }
 
     function viewSecrets(){
-        window.location.href=`/dashboard/project/${id}`
+        window.location.href=`/dashboard/project/${id}_${localStorage.getItem("USK")}_${localStorage.getItem("authToken")}`
     }
     
 </script>
