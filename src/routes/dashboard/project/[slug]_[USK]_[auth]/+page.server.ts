@@ -22,34 +22,28 @@ async function fetchSecretsToken(USK: string, auth: string, project: string) {
         }
       }
     )
-    .then((res) => {
+    .then(async (res) => {
       const { data } = res.data;
-      try {
-        console.log("Decrypting")
-        const decryptedSecretsObject = decrypter.decrypt(data);
-        return decryptedSecretsObject
-      } catch (error) {
-        console.log(error)
-        return false
-      }
+      const decryptedSecretsObject = decrypter.decrypt(data);
+      return decryptedSecretsObject
 
     })
     .catch((err) => {
       return false;
     });
-    return response
+  return response
 }
 
 
 
 export const load: PageLoad = async ({ params }) => {
-    const result = await fetchSecretsToken(params.USK, params.auth, params.slug)
-    if(result!=false){
-      return {
-        token: JSON.parse(result as string)
-      }
-    }
+  const result = await fetchSecretsToken(params.USK, params.auth, params.slug)
+  if (result != false) {
     return {
-      token: result
-    };  
+      token: JSON.parse(result as string)
+    }
+  }
+  return {
+    token: result
+  };
 }
