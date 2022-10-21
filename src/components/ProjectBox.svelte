@@ -14,8 +14,8 @@
     
 </script>
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div class={` ${nameMatched?"animate-pulse border-red-400 dark:border-red-800":""} z-5 relative w-60 h-48 rounded-xl border-2 p-4 m-2 grow sm:grow-0  dark:border-slate-600 bg-slate-200 dark:bg-slate-700 hover:drop-shadow-md dark:hover:drop-shadow-none dark:hover:shadow-slate-400 hover:cursor-pointer transition-all `} >
-    <h1 on:click={viewSecrets} class="bg-slate-300 dark:bg-slate-600 text-slate-800 dark:text-slate-300 rounded-lg px-2 text-lg" >{name}</h1>
+<div class={` ${nameMatched?"animate-pulse border-red-400 dark:border-red-800":""} z-10 relative w-60 h-48 rounded-xl border-2 p-4 m-2 grow sm:grow-0  dark:border-slate-600 bg-slate-200 dark:bg-slate-700 hover:drop-shadow-md dark:hover:drop-shadow-none dark:hover:shadow-lg dark:hover:shadow-slate-600/50  transition-all `} >
+    <h1 on:click={viewSecrets} class="bg-slate-300 dark:bg-slate-600 text-slate-800 dark:text-slate-300 rounded-lg px-2 text-lg hover:border hover:border-slate-400 dark:hover:border-slate-500  hover:cursor-pointer" >{name}</h1>
     <p class="px-2 my-1 bg-slate-400 text-slate-600 dark:bg-slate-500 dark:text-slate-400 rounded-full truncate" >{id}</p>
     <!-- color circles -->
     <div class="z-10 absolute group bottom-4 left-4" >

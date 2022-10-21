@@ -132,7 +132,7 @@
             {/await}    
 
             <!-- project create box -->
-            <div  class={`${ showForm ? 'grow sm:grow-0 order-first sm:order-none w-60 h-48 rounded-xl border-2 p-4 m-2 border-slate-400 dark:border-slate-600 bg-slate-200 bg-slate-700 flex flex-col justify-center transition-all ' : 'hidden' }`} >
+            <div  class={`${ showForm ? '' : 'hidden' } grow sm:grow-0 order-first sm:order-none w-60 h-48 rounded-xl border-2 p-4 m-2 border-slate-400 dark:border-slate-600 bg-slate-200 dark:bg-slate-700 flex flex-col justify-center transition-all `} >
                 <input bind:value={projectName}  type="text" placeholder="New project name" class="rounded-lg px-2 w-full h-8 text-[15px] bg-slate-100 dark:bg-slate-600 focus:outline-none focus:border focus:border-slate-300 dark:focus:border-slate-500 dark:caret-slate-300 dark:text-slate-300" />
                 <button on:click={createProject}  class="rounded-full text-slate-500 hover:text-slate-600 mx-2 mt-4 p-1 px-2 bg-slate-300 hover:border hover:border-slate-400 dark:hover:text-slate-400 dark:bg-slate-600 dark:hover:border-slate-500 transition-all ">Create</button>
                 <button on:click={toggleShow} class="rounded-full text-slate-500 hover:text-slate-600 mx-2 mt-4 p-1 px-2 bg-slate-300 hover:border hover:border-slate-400 dark:hover:text-slate-400 dark:bg-slate-600 dark:hover:border-slate-500 transition-all ">Cancel</button>
@@ -140,7 +140,7 @@
 
             <!-- new project box -->
             <!-- svelte-ignore a11y-click-events-have-key-events -->
-            <div on:click={toggleShow} class={`${ showForm ? 'hidden' : 'group grow sm:grow-0 order-first sm:order-none w-60 h-48 rounded-xl border-2 border-dashed hover:border-solid p-4 m-2 border-slate-400 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 dark:hover:border-slate-600 flex items-center justify-center hover:drop-shadow-md dark:hover:drop-shadow-none dark:hover:shadow-slate-500/50 hover:cursor-pointer transition-all' }`} >
+            <div on:click={toggleShow} class={`${ showForm ? 'hidden' : '' } group grow sm:grow-0 order-first sm:order-none w-60 h-48 rounded-xl border-2 border-dashed hover:border-solid p-4 m-2 border-slate-400 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 dark:hover:border-slate-600 flex items-center justify-center hover:drop-shadow-md dark:hover:drop-shadow-none dark:hover:shadow-lg dark:hover:shadow-slate-500/50 hover:cursor-pointer transition-all`} >
                 <span class="bg-slate-300 dark:bg-slate-700 dark:group-hover:bg-slate-600 text-slate-400 dark:text-slate-500 group-hover:text-slate-500 dark:group-hover:text-slate-400 text-xl rounded-full px-4" >New</span>
             </div>
 
