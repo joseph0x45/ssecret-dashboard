@@ -4,12 +4,15 @@
     import axios from "axios"
     import ProjectBox from "../../components/ProjectBox.svelte"
     
+    
     //NOTE State management
     import { projects } from "../../stores/stores"
     let projectsArray : IUserProject[]
     projects.subscribe((value)=>{
         projectsArray = value
     })
+
+    $: projectNameState = projectName    
     
     //NOTE Function to fetch user's projects asynchronously
     async function fetchUserProjects(){
@@ -109,7 +112,7 @@
             {:then result}
                 {#if $projects.length!=0}
                     {#each $projects as project}
-                        <ProjectBox name={project.name} id={project._id}  />                
+                        <ProjectBox name={project.name} id={project._id} projectName={projectNameState} />                
                     {/each}
                 {:else}
                     <!-- error box  -->
@@ -128,7 +131,7 @@
 
             <!-- project create box -->
             <div  class={`${ showForm ? 'grow sm:grow-0 order-first sm:order-none w-60 h-48 rounded-xl border-2 p-4 m-2 border-slate-400 dark:border-slate-600 bg-slate-200 bg-slate-700 flex flex-col justify-center transition-all ' : 'hidden' }`} >
-                <input bind:value={projectName} type="text" placeholder="New project name" class="rounded-lg px-2 w-full h-8 text-[15px] bg-slate-100 dark:bg-slate-600 focus:outline-none focus:border focus:border-slate-300 dark:focus:border-slate-500 dark:caret-slate-300 dark:text-slate-300" />
+                <input bind:value={projectName}  type="text" placeholder="New project name" class="rounded-lg px-2 w-full h-8 text-[15px] bg-slate-100 dark:bg-slate-600 focus:outline-none focus:border focus:border-slate-300 dark:focus:border-slate-500 dark:caret-slate-300 dark:text-slate-300" />
                 <button on:click={createProject}  class="rounded-full text-slate-500 hover:text-slate-600 mx-2 mt-4 p-1 px-2 bg-slate-300 hover:border hover:border-slate-400 dark:hover:text-slate-400 dark:bg-slate-600 dark:hover:border-slate-500 transition-all ">Create</button>
                 <button on:click={toggleShow} class="rounded-full text-slate-500 hover:text-slate-600 mx-2 mt-4 p-1 px-2 bg-slate-300 hover:border hover:border-slate-400 dark:hover:text-slate-400 dark:bg-slate-600 dark:hover:border-slate-500 transition-all ">Cancel</button>
             </div>

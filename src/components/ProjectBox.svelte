@@ -1,19 +1,20 @@
 <script lang="ts" >
     export let name: string
     export let id: string
+    export let projectName: string
 
+    $: nameMatched = name===projectName
     function copyID(){
         navigator.clipboard.writeText((id))
     }
 
     function viewSecrets(){
-        window.location.href=`/project/${id}`
+        window.location.href=`/dashboard/project/${id}`
     }
     
 </script>
-
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div on:click={viewSecrets} class="z-5 relative w-60 h-48 rounded-xl border-2 p-4 m-2 grow sm:grow-0 border-slate-400 dark:border-slate-600 bg-slate-200 dark:bg-slate-700 hover:drop-shadow-md dark:hover:drop-shadow-none dark:hover:shadow-slate-400 hover:cursor-pointer transition-all " >
+<div on:click={viewSecrets} class={` ${nameMatched?"animate-pulse border-red-400 dark:border-red-800":""} z-5 relative w-60 h-48 rounded-xl border-2 p-4 m-2 grow sm:grow-0  dark:border-slate-600 bg-slate-200 dark:bg-slate-700 hover:drop-shadow-md dark:hover:drop-shadow-none dark:hover:shadow-slate-400 hover:cursor-pointer transition-all `} >
     <h1 class="bg-slate-300 dark:bg-slate-600 text-slate-800 dark:text-slate-300 rounded-lg px-2 text-lg" >{name}</h1>
     <p class="px-2 my-1 bg-slate-400 text-slate-600 dark:bg-slate-500 dark:text-slate-400 rounded-full truncate" >{id}</p>
     <!-- color circles -->
