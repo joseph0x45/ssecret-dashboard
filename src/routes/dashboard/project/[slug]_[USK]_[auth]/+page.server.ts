@@ -40,10 +40,12 @@ export const load: PageLoad = async ({ params }) => {
   const result = await fetchSecretsToken(params.USK, params.auth, params.slug)
   if (result != false) {
     return {
-      token: JSON.parse(result as string)
+      token: JSON.parse(result as string),
+      project: params.slug
     }
   }
   return {
-    token: result
+    token: result,
+    project: params.slug
   };
 }
