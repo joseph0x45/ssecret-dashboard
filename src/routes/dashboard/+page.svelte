@@ -25,13 +25,12 @@
         )
         .then((res)=>{
             const { data } = res.data
-            projects.update((projects)=>[...data])
+            projects.set([...data])
             return data
         })
         .catch((err)=>{
             return false
         })
-        console.log(projectsArray)
         return response
     }
 
@@ -50,14 +49,6 @@
         console.log('toggle create form box');
         showForm = !showForm;
     }
-    
-    //NOTE Get user's email from local storage when page is loading
-    let userEmail: string
-    onMount( async ()=>{
-        if(browser){
-            userEmail = localStorage.getItem("user") as string
-        }
-    })
 
     //NOTE Function to create a project
     async function createProject(){
