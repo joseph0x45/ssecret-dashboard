@@ -74,7 +74,7 @@
             const {  data } = res.data
             projects.update((projects)=>[...projects, { owner: data.owner, collaborators: data.collaborators, _id: data._id, secrets: data.secrets, name: data.name }])
             toggleShow()
-
+            projectName=""
         })
         .catch((errResponse)=>{
             const { status, data } = errResponse.response
@@ -102,7 +102,6 @@
     <!-- top bar -->
     <div class="w-full flex pb-4 border-b border-slate-400 dark:border-slate-600 items-center ">
         <h1 class="text-3xl font-bold text-slate-700 dark:text-slate-300" >My projects</h1>
-        <span class="fa-solid fa-user"></span>
         <button on:click={toggleShow} class="ml-6 p-1 px-4 rounded-full bg-blue-100 dark:bg-slate-700 text-blue-400 dark:text-slate-400 hover:bg-blue-200 dark:hover:bg-slate-600 hover:text-blue-500 dark:hover:text-blue-300 transition-all" >New+</button>
     </div>
 
