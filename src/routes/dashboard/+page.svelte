@@ -1,8 +1,6 @@
 <script lang="ts" >
     const api_url = "https://web-production-9c04.up.railway.app/project/create"
     const fetch_url_endpoint = "https://web-production-9c04.up.railway.app/project/fetch"
-    import { onMount } from "svelte";
-	import { browser } from '$app/environment';
     import axios from "axios"
     import ProjectBox from "../../components/ProjectBox.svelte"
     
