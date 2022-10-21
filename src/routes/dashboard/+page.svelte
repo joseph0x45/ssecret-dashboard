@@ -44,7 +44,6 @@
     let showForm = false;
     let projectName : string = ""
     function toggleShow(){
-        console.log('toggle create form box');
         showForm = !showForm;
     }
 
@@ -56,7 +55,7 @@
                 return
             }
         } 
-        const response = await axios.post(
+        await axios.post(
             api_url,
             {
                 name: projectName,
@@ -89,11 +88,6 @@
 </script>
 
 <div class="fixed w-full h-full bg-slate-100" >
-    <!-- nav bar -->
-    <!-- <nav class="z-50 sticky top-0 w-full h-24 sm:h-32 px-4 flex justify-between items-center border-b border-slate-300 dark:border-slate-700 bg-slate-200  dark:bg-slate-900" >
-        <h2 class="font-bold poppins text-3xl sm:text-4xl xl:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500 transition-all ">SuperSecret</h2>
-        <h2 class="text-slate-800 dark:text-slate-300 font-medium rounded-full p-1 px-2 bg-slate-300 dark:bg-slate-800 text-[12px] sm:text-[14px] md:text-[16px] transition-all" >{userEmail}</h2>
-    </nav> -->
 
     <!-- main content -->
     <div class="w-full h-full z-0 bg-slate-100 dark:bg-slate-800 p-4 overflow-y-auto pb-36" >
@@ -113,17 +107,19 @@
                     </svg>
                 </div>
             {:then result}
-                {#each $projects as project}
-                    <ProjectBox name={project.name} id={project._id}  />                
-                {/each}
-            {:catch error}
-                <!-- error box  -->
-                <div class="grow sm:grow-0 order-first sm:order-none w-60 h-48 rounded-xl border-2 p-4 m-2 border-slate-400 bg-slate-200 flex flex-col items-center justify-center transition-all" >
-                    <span class="material-icons-round text-slate-600 text-6xl" >warning_amber</span>
-                    <span class="text-slate-400" >Couldn't load projects, try to refresh</span>
-                    <!-- svelte-ignore a11y-click-events-have-key-events -->
-                    <span on:click={fetchProjects} class="material-icons-round text-slate-600 rounded-full p-2 bg-slate-300 hover:text-slate-700 hover:cursor-pointer hover:rotate-45 transition-all " >refresh</span>
-                </div>
+                {#if $projects.length!=0}
+                    {#each $projects as project}
+                        <ProjectBox name={project.name} id={project._id}  />                
+                    {/each}
+                {:else}
+                    <!-- error box  -->
+                    <div class="grow sm:grow-0 order-first sm:order-none w-60 h-48 rounded-xl border-2 p-4 m-2 border-slate-400 bg-slate-200 flex flex-col items-center justify-center transition-all" >
+                        <span class="material-icons-round text-slate-600 text-6xl" >warning_amber</span>
+                        <span class="text-slate-400" >Couldn't load projects, try to refresh</span>
+                        <!-- svelte-ignore a11y-click-events-have-key-events -->
+                        <span on:click={fetchProjects} class="material-icons-round text-slate-600 rounded-full p-2 bg-slate-300 hover:text-slate-700 hover:cursor-pointer hover:rotate-45 transition-all " >refresh</span>
+                    </div>
+                {/if}
             {/await}    
 
             
