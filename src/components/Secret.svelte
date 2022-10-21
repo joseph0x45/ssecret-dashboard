@@ -33,7 +33,7 @@
 		stroke-width="1.5"
 		stroke="currentColor"
 		class={` ${
-			showValue ? 'hidden' : ''
+			!showValue ? 'hidden' : ''
 		} w-10 h-10 m-2 p-1 shrink-0 border-2 rounded-full text-red-600 bg-white border-red-600 dark:text-red-400 dark:border-red-400 dark:bg-red-700 hover:scale-105 hover:cursor-pointer transition-all`}
 	>
 		<path
@@ -57,7 +57,7 @@
 		stroke-width="1.5"
 		stroke="currentColor"
 		class={` ${
-			!showValue ? 'hidden' : ''
+			showValue ? 'hidden' : ''
 		} w-10 h-10 m-2 p-1 shrink-0 border-2 rounded-full text-red-600 bg-white border-red-600 dark:text-red-400 dark:border-red-400 dark:bg-red-700 hover:scale-105 hover:cursor-pointer transition-all`}
 	>
 		<path
