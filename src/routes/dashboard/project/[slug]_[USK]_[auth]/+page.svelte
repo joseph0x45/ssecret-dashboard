@@ -53,7 +53,8 @@
 <div class="w-full h-full z-0 bg-slate-100 dark:bg-slate-800 p-4 overflow-y-auto pb-36">
 	<!-- top bar -->
 	<div class="w-full flex pb-4 border-b border-slate-400 dark:border-slate-600 justify-between items-center text-ellipsis  px-4 sm:px-0 ">
-		<svg xmlns="http://www.w3.org/2000/svg" class="w-10 shrink-0 h-10 mr-4 sm:mr-0 sm:ml-4 rounded-full  dark:hover:bg-slate-700 dark:text-slate-600 dark:hover:text-slate-400 hover:-translate-x-1 hover:scale-110 hover:cursor-pointer transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
+		<svg on:click={()=>{ window.location.href="/dashboard" }} xmlns="http://www.w3.org/2000/svg" class="w-10 shrink-0 h-10 mr-4 sm:mr-0 sm:ml-4 rounded-full  dark:hover:bg-slate-700 dark:text-slate-600 dark:hover:text-slate-400 hover:-translate-x-1 hover:scale-110 hover:cursor-pointer transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 			<path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
 		</svg> 
 		<h1 class="text-xl sm:text-3xl shrink text-right   font-bold text-slate-700 dark:text-slate-300">Project ID: {project}</h1>
