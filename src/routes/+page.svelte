@@ -106,7 +106,7 @@
 		<div class=" text-center">✅ Missing creds from .env files</div>
 	</div>
 	<div class="mt-10 text-center" >Watch a demo video</div>
-	<iframe title="video" class=" m-auto" width="1500" height="800" src="https://www.youtube.com/embed/tgbNymZ7vqY" />
+	<iframe title="video" class=" m-auto lg:w-[1500px] lg:h-[800px] " src="https://www.youtube.com/embed/kO24LcPZoSM" />
 	<!-- Request access to the code -->
 	<div id="dev" class=" lg:text-4xl text-center my-10 text-green-500">
 		{'</>'} It's OpenSource :) so you can see that we can't see your secrets {'</>'}
