@@ -4,6 +4,7 @@
 	import type { PageData } from './$types';
 	import { secrets } from '../../../../stores/stores';
 	import Secret from '../../../../components/Secret.svelte';
+	// import Footer from '../../../../components/Footer.svelte';
 	import axios from 'axios';
 	export let data: PageData;
 	const variables = data.token;
@@ -54,10 +55,24 @@
 	<!-- top bar -->
 	<div class="w-full flex pb-4 border-b border-slate-400 dark:border-slate-600 justify-between items-center text-ellipsis  px-4 sm:px-0 ">
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<svg on:click={()=>{ window.location.href="/dashboard" }} xmlns="http://www.w3.org/2000/svg" class="w-10 shrink-0 h-10 mr-4 sm:mr-0 sm:ml-4 rounded-full  dark:hover:bg-slate-700 dark:text-slate-600 dark:hover:text-slate-400 hover:-translate-x-1 hover:scale-110 hover:cursor-pointer transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+		<svg on:click={()=>{ window.location.href="/dashboard" }} xmlns="http://www.w3.org/2000/svg" class="w-10 shrink-0 h-10 mr-4 sm:mr-0 sm:ml-4 rounded-full text-slate-700  dark:hover:bg-slate-500 hover:text-slate-700 dark:text-slate-600 dark:hover:text-slate-400 hover:-translate-x-1 hover:scale-110 hover:cursor-pointer transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 			<path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
 		</svg> 
-		<h1 class="text-xl sm:text-3xl shrink text-right   font-bold text-slate-700 dark:text-slate-300">Project ID: {project}</h1>
+		<div class="group flex items-center" >
+			<!-- svelte-ignore a11y-click-events-have-key-events -->
+			<div class='has-tooltip'>
+				<span class='tooltip opacity-90 rounded-lg shadow-lg p-1 px-2 sm:p-2  dark:bg-slate-900 text-slate-500 mt-10 mr-24 transition-all'>Click to copy CLI script </span>
+				<svg on:click={()=>{ navigator.clipboard.writeText(` npx @thepisewigeon/sscli ${project} `) }}  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="z-50 rounded-full p-1 mr-1 text-slate-400  hover:text-slate-600 dark:text-slate-500  dark:hover:text-slate-300 hover:cursor-pointer w-8 h-8 transition-all ">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
+				</svg>
+			</div>
+			
+			<h1 class="text-xl sm:text-3xl shrink text-right   font-bold text-slate-700 dark:text-slate-300">Project ID: {project} </h1>
+
+			
+			
+		</div>
+		
 		
 	</div>
 

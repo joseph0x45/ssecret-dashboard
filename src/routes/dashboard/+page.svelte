@@ -4,6 +4,7 @@
     const fetch_url_endpoint = "https://web-production-9c04.up.railway.app/project/fetch"
     import axios from "axios"
     import ProjectBox from "../../components/ProjectBox.svelte"
+    // import Footer from "../../components/Footer.svelte"
     
     onMount(()=>{
         if(browser){
@@ -107,15 +108,15 @@
     </nav> -->
 
     <!-- main content -->
-<div class="w-full h-full z-0 bg-slate-100 dark:bg-slate-800 p-4 overflow-y-auto pb-36" >
+<div class="w-full h-full z-0 overflow-y-auto bg-slate-100 dark:bg-slate-800   " >
     <!-- top bar -->
-    <div class="w-full flex pb-4 border-b border-slate-400 dark:border-slate-600 items-center ">
+    <div class="w-full flex pb-4 border-b border-slate-400 dark:border-slate-600 p-4 items-center ">
         <h1 class="text-3xl font-bold text-slate-700 dark:text-slate-300" >My projects</h1>
-        <button on:click={toggleShow} class="ml-6 p-1 px-4 rounded-full bg-blue-100 dark:bg-slate-700 text-blue-400 dark:text-slate-400 hover:bg-blue-200 dark:hover:bg-slate-600 hover:text-blue-500 dark:hover:text-blue-300 transition-all" >New+</button>
+        <!-- <button on:click={toggleShow} class="ml-6 p-1 px-4 rounded-full bg-blue-100 dark:bg-slate-700 text-blue-400 dark:text-slate-400 hover:bg-blue-200 dark:hover:bg-slate-600 hover:text-blue-500 dark:hover:text-blue-300 transition-all" >New+</button> -->
     </div>
 
         <!-- projects container -->
-        <div class="flex flex-wrap mt-4 p-4 transition-all  " >
+        <div class="flex flex-wrap mt-4 p-4 transition-all  pb-36" >
             <!-- single project div -->
             {#await usersProjects}
                 <!-- loader box -->
@@ -154,7 +155,10 @@
             </div>
 
     </div>
-
+    
+    
 </div>
+
+
 
 
