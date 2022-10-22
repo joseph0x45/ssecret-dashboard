@@ -22,7 +22,7 @@
 	}
 </script>
 
-<div class=" flex flex-col  w-full text-white p-4 bg-slate-200 dark:bg-slate-900">
+<div class=" flex flex-col  w-full text-white p-4 bg-slate-900">
 	<!-- Header -->
 	<div class="  text-xs lg:text-xl flex justify-around w-full items-baseline mb-3">
 		<div class="  font-extrabold lg:text-3xl">ᕙSuperSecretᕗ</div>
