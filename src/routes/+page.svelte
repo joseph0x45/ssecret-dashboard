@@ -111,11 +111,10 @@
     </div>
 
     <!-- Request access to the code -->
-    <div id="dev" class=" lg:text-4xl text-center my-20 text-green-500" >
+    <div id="dev" class=" lg:text-4xl text-center my-10 text-green-500" >
         {"</>"} It's OpenSource :) so you can see that we can't see your secrets {"</>"}
     </div>
     <div class=" flex flex-col w-2/5 m-auto space-y-5 " >
-        <p class=" text-center text-xs lg:text-xl" >Fill this form to have access to the code when the app is released</p>
         <input bind:value={email} class=" p-2 focus:outline-none text-slate-600 rounded-md" placeholder="Your email" type="text">
         <input bind:value={githubHandle} class=" p-2 focus:outline-none text-slate-600 rounded-md" placeholder="Your GitHub handle" type="text">
         <button disabled={requestedDev} on:click={requestAccess} class=" text-xs lg:text-xl bg-green-500  lg:w-2/5 m-auto p-2 rounded-md hover:scale-110 ease-in duration-200" >
@@ -134,7 +133,7 @@
 
     <div class=" text-center lg:text-3xl my-20" >
 		<p class=" text-xl" >
-			Developped and maintained by <a class=" underline text-blue-500" href="htps://github.com/TheWisePigeon">TheWisePigeon</a> and <a class=" underline text-blue-500" href="https://github.com/drect911">dRect911</a>
+			Developped and maintained by <a target="_blank"  class=" underline text-blue-500" href="htps://github.com/TheWisePigeon">TheWisePigeon</a> and <a target="_blank" class=" underline text-blue-500" href="https://github.com/drect911">dRect911</a>
 		</p>
     </div>
 
