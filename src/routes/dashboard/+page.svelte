@@ -1,12 +1,21 @@
 <script lang="ts" >
+    import { onMount } from "svelte";
     const api_url = "https://web-production-9c04.up.railway.app/project/create"
     const fetch_url_endpoint = "https://web-production-9c04.up.railway.app/project/fetch"
     import axios from "axios"
     import ProjectBox from "../../components/ProjectBox.svelte"
     
+    onMount(()=>{
+        if(browser){
+            if(!localStorage.getItem("authToken")){
+                window.location.href="/auth"
+            }
+        }
+    })
     
     //NOTE State management
     import { projects } from "../../stores/stores"
+	import { browser } from "$app/environment";
     let projectsArray : IUserProject[]
     projects.subscribe((value)=>{
         projectsArray = value
