@@ -38,6 +38,7 @@
 				return data;
 			})
 			.catch((err) => {
+				console.log(err)
 				return false;
 			});
 		return response;
@@ -148,6 +149,8 @@
 					<ProjectBox name={project.name} id={project._id} projectName={projectNameState} />
 				{/each}
 			{:else}
+				{#if (result==false && $projects.length!=0 )}
+					
 				<!-- error box  -->
 				<div
 					class="grow sm:grow-0 order-first sm:order-none w-60 h-48 rounded-xl border-2 p-4 m-2 border-slate-400 dark:border-slate-600 bg-slate-200 dark:bg-slate-700 flex flex-col items-center justify-center transition-all"
@@ -165,6 +168,7 @@
 						>refresh</span
 					>
 				</div>
+				{/if}
 			{/if}
 		{/await}
 		<!-- project create box -->
