@@ -67,7 +67,7 @@
 				</svg>
 			</div>
 			
-			<h1 class="text-xl sm:text-3xl shrink text-right   font-bold text-slate-700 dark:text-slate-300">Project ID: {project} </h1>
+			<h1 class="text-lg md:text-3xl sm:text-2xl shrink text-right px-2  font-bold text-slate-700 dark:text-slate-300">Project ID: {project} </h1>
 
 			
 			
