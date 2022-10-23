@@ -18,7 +18,7 @@
 			{key}
 		</div>
 		<div
-			class="h-10 rounded-xl m-2 col-span-2 sm:col-span-1 flex items-center px-2 border bg-slate-200 dark:bg-slate-600 text-slate-600 dark:text-slate-400 border-slate-300 dark:border-slate-500 hover:border-slate-400  transition-all "
+			class="h-10 rounded-xl m-2 col-span-2 sm:col-span-1 flex items-center pl-2 pr-4 truncate border bg-slate-200 dark:bg-slate-600 text-slate-600 dark:text-slate-400 border-slate-300 dark:border-slate-500 hover:border-slate-400  transition-all "
 		>
 			{ showValueState? value : value!=undefined?"*".repeat(value.length):"*".repeat(10)}
 		</div>
