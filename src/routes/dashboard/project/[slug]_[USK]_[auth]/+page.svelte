@@ -51,6 +51,9 @@
 	}
 </script>
 
+<svelte:head>
+    <title>SuperSecret | Project {project}</title>
+</svelte:head>
 <div class="w-full h-full z-0 bg-slate-100 dark:bg-slate-800 p-4 overflow-y-auto pb-36">
 	<!-- top bar -->
 	<div class="w-full flex pb-4 border-b border-slate-400 dark:border-slate-600 justify-between items-center text-ellipsis  px-4 sm:px-0 ">

@@ -109,6 +109,10 @@
 
 </script>
 
+<svelte:head>
+    <title>SuperSecret | Auth</title>
+</svelte:head>
+
 <div class="fixed w-full h-full flex flex-col justify-center items-center bg-slate-200 dark:bg-slate-900">
     <div class="w-[360px] sm:w-[540px] flex flex-col justify-center items-center p-4 transition-all" >
         <h2 class="font-bold poppins text-4xl sm:text-5xl xl:text-6xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500 transition-all ">SuperSecret</h2>
