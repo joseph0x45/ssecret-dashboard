@@ -1,7 +1,6 @@
 <script lang="ts">
     // Can also be included with a regular script tag
 
-console.log(localStorage.theme)
 
 
 </script>
@@ -14,7 +13,7 @@ console.log(localStorage.theme)
         
         <!-- right nav -->
         <div class="text-sm lg:text-xl sm:text-normal bg-slate-200/25 hover:bg-slate-300/50 text-slate-900 border border-slate-400/50 dark:bg-slate-700/25 dark:hover:bg-slate-700/50  dark:text-slate-300 dark:border-slate-600/50  rounded-xl p-2 px-4 transition-all" >
-            <a href="/" class="focus:outline-none " >Developers </a> 
+            <a href="#dev" class="focus:outline-none " >Developers </a> 
             <!-- <a href="#">Get Started</a> -->
         </div>
     </nav>
@@ -32,7 +31,7 @@ console.log(localStorage.theme)
             
         </div>
         <div class="col-span-3 pt-8 pb-32 md:py-0  lg:col-span-1 flex justify-center items-center" >
-            <button class=" text-xl font-bold p-3 rounded-xl shadow-md hover:scale-105 hover:-translate-y-1 transition-all shadow-sky-400/50 dark:shadow-sky-500 bg-sky-600 dark:bg-sky-400 text-white dark:text-slate-800 hover:bg-white dark:hover:bg-slate-100 hover:text-sky-600 dark:hover:text-sky-800 "  >
+            <button on:click={ ()=>{ window.location.href="/auth" } } class=" text-xl font-bold p-3 rounded-xl shadow-md hover:scale-105 hover:-translate-y-1 transition-all shadow-sky-400/50 dark:shadow-sky-500 bg-sky-600 dark:bg-sky-400 text-white dark:text-slate-800 hover:bg-white dark:hover:bg-slate-100 hover:text-sky-600 dark:hover:text-sky-800 "  >
                 Get Started
             </button>
         </div>
@@ -160,7 +159,7 @@ console.log(localStorage.theme)
             </h1>
 
             <div class="flex flex-col m-auto justify-center items-center p-4 w-1/2" >
-                <button class="w-3/4 h-16 m-4 font-bold text-xl rounded-xl bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500 hover:bg-gradient-to-br text-white dark:text-slate-800 dark:font-extrabold shadow-lg shadow-white/75 dark:shadow-slate-600/75  border-2 border-white dark:border-slate-600 hover:scale-110 transition-all" >
+                <button on:click={ ()=>{ window.location.href="/auth" } } class="w-3/4 h-16 m-4 font-bold text-xl rounded-xl bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500 hover:bg-gradient-to-br text-white dark:text-slate-800 dark:font-extrabold shadow-lg shadow-white/75 dark:shadow-slate-600/75  border-2 border-white dark:border-slate-600 hover:scale-110 transition-all" >
                     Get started
                 </button>
             </div>
