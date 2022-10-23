@@ -30,7 +30,7 @@
         
         <!-- right nav -->
         <div class="text-sm lg:text-xl sm:text-normal bg-slate-200/25 hover:bg-slate-300/50 text-slate-900 border border-slate-400/50 rounded-xl p-2 px-4 transition-all" >
-            <a href="/" class="focus:outline-none " >Developers </a> 
+            <a href="#dev" class="focus:outline-none " >Developers </a> 
             <!-- <a href="#">Get Started</a> -->
         </div>
     </nav>
@@ -48,7 +48,7 @@
             
         </div>
         <div class="col-span-3 pt-8 pb-32 md:py-0  lg:col-span-1 flex justify-center items-center" >
-            <button class=" text-xl font-bold p-3 rounded-xl shadow-md hover:scale-105 hover:-translate-y-1 transition-all shadow-sky-400/50 bg-sky-600 text-white hover:bg-white hover:text-sky-600  "  >
+            <button on:click={ ()=>{ window.location.href="/auth" } } class=" text-xl font-bold p-3 rounded-xl shadow-md hover:scale-105 hover:-translate-y-1 transition-all shadow-sky-400/50 bg-sky-600 text-white hover:bg-white hover:text-sky-600  "  >
                 Get Started
             </button>
         </div>
@@ -78,13 +78,9 @@
             </h1>
             <p class=" text-slate-300  md:text-xl lg:text-2xl text-start w-full p-4 md:px-8 lg:px-16 xl:px-32 lg:w-3/5" >
                 
-                Basically, what SuperSecret does is encrypt your environment variables by using a combinaison of JWT and Hashing 
-                When you will create your SuperSecret account, a random string will be generated as your secret hash. That string 
-                is known to no one. The actual secrets object is first signed into a JWT and then hashed with your secret key. 
-                All you will have to do to use your variables in a project is to run our  <a href="/" class="text-sky-600 font-bold underline hover:no-underline" >CLI</a>  before running your server. 
-                Our goal is to make sure that the variables are visible by you and only you. You can add collaborators to a project 
-                but all it enables them to do is pull the secrets into their process.  You will be the only one with direct read and write access to your secrets
-
+                Basically, what SuperSecret does is encrypt your environment variables on our server using an algorythm that is always improving <br>
+				These variables are then pulled and injected in your local process before your application is run. Ensuring maximum integrity of your data <br>
+				Watch a demo video <a target="_blank" href="https://youtu.be/kO24LcPZoSM" class="text-sky-700 hover:text-sky-600 font-bold underline hover:no-underline" >Here</a>
             </p>
             
         </div>
@@ -163,7 +159,7 @@
     </div>
 
     <!-- Request access to the code section -->
-    <div class="w-full grid grid-cols-12 pt-24 pb-48 bg-slate-100 bg-cover border-b border-slate-800" style="background-image: url('./img/stacked-waves-haikei-dark-slate.svg')" >
+    <div id="dev" class="w-full grid grid-cols-12 pt-24 pb-48 bg-slate-100 bg-cover border-b border-slate-800" style="background-image: url('./img/stacked-waves-haikei-dark-slate.svg')" >
 
         <!-- style="background-image: url('./img/layered-waves-haikei.svg')" -->
 
@@ -174,7 +170,7 @@
             </h1>
 
             <div class="flex flex-col m-auto justify-center items-center p-4 w-1/2" >
-                <button class="w-3/4 h-16 m-4 font-bold text-xl rounded-xl bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500 text-white shadow-lg shadow-white/75  border-2 border-white hover:scale-110 transition-all" >
+                <button on:click={ ()=>{ window.location.href="/auth" } } class="w-3/4 h-16 m-4 font-bold text-xl rounded-xl bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500 text-white shadow-lg shadow-white/75  border-2 border-white hover:scale-110 transition-all" >
                     Get started
                 </button>
             </div>
@@ -184,14 +180,14 @@
         <div class="col-span-12 sm:col-span-8" >
             <h1 class=" text-center text-3xl xl:text-[50px] px-8 xl:px-32 font-bold mb-8 text-slate-300 " >
                 <!-- bg-gradient-to-tl text-transparent bg-clip-text from-sky-500 via-purple-500 to-pink-500 -->
-                It's OpenSource :) so you can see that we can't see your secrets
+                It's OpenSource :)
             </h1>
     
             <div class="flex flex-col m-auto justify-center items-center p-4 w-4/5 lg:w-1/2" >
                 <input bind:value={email} type="text" placeholder="Your email" class="w-full h-10 lg:h-12 m-2 pl-2 p-1 rounded-lg text-lg focus:outline-none bg-slate-200 border-2 border-slate-400 hover:border-slate-600 focus:border-slate-600  text-slate-800 caret-slate-800" >
                 <input bind:value={githubHandle} type="text" placeholder="Your Github handle" class="w-full h-10 lg:h-12 m-2 pl-2 p-1 rounded-lg text-lg focus:outline-none bg-slate-200 border-2 border-slate-400 hover:border-slate-600 focus:border-slate-600  text-slate-800 caret-slate-800" >
                 <button on:click={requestAccess} class="w-2/3 h-12 m-4 flex justify-center items-center font-bold text-sm lg:text-xl rounded-xl bg-slate-400 text-slate-700 shadow-lg shadow-slate-600/75 border-2 border-slate-600 hover:bg-slate-300 hover:scale-105 transition-all" >
-                    Request access to the code
+                    { requestedDev? " We got you :) " : "Request access to the code" }
                     <!-- github -->
                     <a href="#!" class="mx-4 text-slate-600 hover:text-slate-800 dark:text-slate-600 dark:hover:text-slate-500 transition-all">
                         <svg
