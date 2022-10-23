@@ -166,10 +166,10 @@
         </div>
 
 
-        <div class="col-span-12 sm:col-span-8" >
+        <div id="dev" class="col-span-12 sm:col-span-8" >
             <h1 class=" text-center text-3xl xl:text-[50px] px-8 xl:px-32 font-bold mb-8 text-slate-300 " >
                 <!-- bg-gradient-to-tl text-transparent bg-clip-text from-sky-500 via-purple-500 to-pink-500 -->
-                It's OpenSource :) so you can see that we can't see your secrets
+                It's OpenSource :)
             </h1>
     
             <div class="flex flex-col m-auto justify-center items-center p-4 w-4/5 lg:w-1/2" >
