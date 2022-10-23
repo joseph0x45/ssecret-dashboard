@@ -1,5 +1,25 @@
 <script lang="ts">
-    // Can also be included with a regular script tag
+    import axios from 'axios';
+	const url = 'https://web-production-22d3.up.railway.app/store';
+	let email: string = '';
+	let githubHandle: string = '';
+
+	let requestedDev = false;
+
+	async function requestAccess() {
+		if (email == '' || githubHandle == '') {
+			alert('Both fields have to be filled');
+			return;
+		}
+		const params = {
+			email,
+			githubHandle
+		};
+		axios.post(url, params);
+		requestedDev = true;
+		email = '';
+		githubHandle = '';
+	}
 
 
 
@@ -173,10 +193,10 @@
             </h1>
     
             <div class="flex flex-col m-auto justify-center items-center p-4 w-4/5 lg:w-1/2" >
-                <input type="text" placeholder="Your email" class="w-full h-10 lg:h-12 m-2 pl-2 p-1 rounded-lg text-lg focus:outline-none bg-slate-200 dark:bg-slate-700 border-2 border-slate-400 dark:border-slate-600 dark:hover:border-slate-500 hover:border-slate-600 focus:border-slate-600 dark:hover:focus-slate-500 text-slate-800 caret-slate-800" >
-                <input type="text" placeholder="Your Github handle" class="w-full h-10 lg:h-12 m-2 pl-2 p-1 rounded-lg text-lg focus:outline-none bg-slate-200 dark:bg-slate-700 border-2 border-slate-400 dark:border-slate-600 dark:hover:border-slate-500 hover:border-slate-600 focus:border-slate-600 dark:hover:focus-slate-500 text-slate-800 caret-slate-800" >
-                <button class="w-2/3 h-12 m-4 flex justify-center items-center font-bold text-sm lg:text-xl rounded-xl bg-slate-400 text-slate-700 shadow-lg shadow-slate-600/75 border-2 border-slate-600 hover:bg-slate-300 hover:scale-105 transition-all" >
-                    Request access to the code
+                <input bind:value={email} type="text" placeholder="Your email" class="w-full h-10 lg:h-12 m-2 pl-2 p-1 rounded-lg text-lg focus:outline-none bg-slate-200 dark:bg-slate-700 border-2 border-slate-400 dark:border-slate-600 dark:hover:border-slate-500 hover:border-slate-600 focus:border-slate-600 dark:hover:focus-slate-500 text-slate-800 caret-slate-800" >
+                <input bind:value={githubHandle} type="text" placeholder="Your Github handle" class="w-full h-10 lg:h-12 m-2 pl-2 p-1 rounded-lg text-lg focus:outline-none bg-slate-200 dark:bg-slate-700 border-2 border-slate-400 dark:border-slate-600 dark:hover:border-slate-500 hover:border-slate-600 focus:border-slate-600 dark:hover:focus-slate-500 text-slate-800 caret-slate-800" >
+                <button on:click={requestAccess} class="w-2/3 h-12 m-4 flex justify-center items-center font-bold text-sm lg:text-xl rounded-xl bg-slate-400 text-slate-700 shadow-lg shadow-slate-600/75 border-2 border-slate-600 hover:bg-slate-300 hover:scale-105 transition-all" >
+                    { requestedDev? "We got you :)" : "Request access to the code" }
                     <!-- github -->
                     <a href="#!" class="mx-4 text-slate-600 hover:text-slate-800 dark:text-slate-600 dark:hover:text-slate-500 transition-all">
                         <svg
