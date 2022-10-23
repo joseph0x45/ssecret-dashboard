@@ -36,3 +36,51 @@ body {
 .has-tooltip:hover .tooltip {
     @apply visible z-50 ;
 }
+
+/* triangle divider */
+.custom-shape-divider-bottom-1666460611 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1666460611 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 170px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1666460611 .shape-fill {
+    fill: #1E293B;
+}
+
+
+
+/* waves divider */
+.custom-shape-divider-bottom-1666461230 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1666461230 svg {
+    position: relative;
+    display: block;
+    width: calc(112% + 1.3px);
+    height: 77px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1666461230 .shape-fill {
+    fill: #1E293B;
+}
