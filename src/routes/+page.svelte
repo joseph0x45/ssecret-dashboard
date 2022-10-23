@@ -202,9 +202,9 @@
     <div class="w-full bg-slate-200 h-16 px-4 text-center text-sm md:text-lg" >
         <p class="py-4" >
             Developped and maintained by 
-            <a href="/" class="text-sky-700 hover:text-sky-600 font-bold underline hover:no-underline" >TheWisePigeon</a>
+            <a target="_blank" href="https://github.com/TheWisePigeon" class="text-sky-700 hover:text-sky-600 font-bold underline hover:no-underline" >TheWisePigeon</a>
             and 
-            <a href="/" class="text-sky-700 hover:text-sky-600 font-bold underline hover:no-underline" >dRect911</a>
+            <a target="_blank" href="https://github.com/dRect911" class="text-sky-700 hover:text-sky-600 font-bold underline hover:no-underline" >dRect911</a>
         </p>
 
     </div>
