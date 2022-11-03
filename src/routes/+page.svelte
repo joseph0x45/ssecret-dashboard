@@ -49,7 +49,7 @@
             
         </div>
         <div class="col-span-3 pt-8 pb-32 md:py-0  lg:col-span-1 flex justify-center items-center" >
-            <button on:click={ ()=>{ window.location.href="/auth" } } class=" text-xl font-bold p-3 rounded-xl shadow-md hover:scale-105 hover:-translate-y-1 transition-all shadow-sky-400/50 dark:shadow-sky-500 bg-sky-600 dark:bg-sky-400 text-white dark:text-slate-800 hover:bg-white dark:hover:bg-slate-100 hover:text-sky-600 dark:hover:text-sky-800 "  >
+            <button disabled on:click={ ()=>{ window.location.href="/auth" } } class=" text-xl font-bold p-3 rounded-xl shadow-md hover:scale-105 hover:-translate-y-1 transition-all shadow-sky-400/50 dark:shadow-sky-500 bg-sky-600 dark:bg-sky-400 text-white dark:text-slate-800 hover:bg-white dark:hover:bg-slate-100 hover:text-sky-600 dark:hover:text-sky-800 "  >
                 Get Started
             </button>
         </div>
@@ -167,14 +167,14 @@
         <!-- style="background-image: url('./img/layered-waves-haikei.svg')" -->
 
         <div class="col-span-12 sm:col-span-4" >
-            <h1 class=" text-center text-5xl md:text-6xl xl:text-[50px] xl:px-8 font-bold text-slate-100 dark:text-slate-300 transition-all " >
+            <h1 class=" text-center text-3xl md:text-6xl xl:text-[50px] xl:px-8 font-bold text-slate-100 dark:text-slate-300 transition-all " >
                 <!-- bg-gradient-to-tl text-transparent bg-clip-text from-sky-500 via-purple-500 to-pink-500 -->
-                Try the beta RIGHT NOW
+                SuperSecret is going through heavy updates <br> We'll be back very soon
             </h1>
 
-            <div class="flex flex-col m-auto justify-center items-center p-4 w-1/2" >
-                <button on:click={ ()=>{ window.location.href="/auth" } } class="w-3/4 h-16 m-4 font-bold text-xl rounded-xl bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500 hover:bg-gradient-to-br text-white dark:text-slate-800 dark:font-extrabold shadow-lg shadow-white/75 dark:shadow-slate-600/75  border-2 border-white dark:border-slate-600 hover:scale-110 transition-all" >
-                    Get started
+            <div class=" flex flex-col m-auto justify-center items-center p-4 w-1/2" >
+                <button disabled on:click={ ()=>{ window.location.href="/auth" } } class="w-3/4 h-16 m-4 font-bold text-xl rounded-xl bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500 hover:bg-gradient-to-br text-white dark:text-slate-800 dark:font-extrabold shadow-lg shadow-white/75 dark:shadow-slate-600/75  border-2 border-white dark:border-slate-600 hover:scale-110 transition-all" >
+                    😭
                 </button>
             </div>
         </div>
@@ -183,14 +183,14 @@
         <div id="dev" class="col-span-12 sm:col-span-8" >
             <h1 class=" text-center text-3xl xl:text-[50px] px-8 xl:px-32 font-bold mb-8 text-slate-300 " >
                 <!-- bg-gradient-to-tl text-transparent bg-clip-text from-sky-500 via-purple-500 to-pink-500 -->
-                It's OpenSource :)
+                Want to be a beta tester? <br>
             </h1>
     
             <div class="flex flex-col m-auto justify-center items-center p-4 w-4/5 lg:w-1/2" >
                 <input bind:value={email} type="text" placeholder="Your email" class="w-full h-10 lg:h-12 m-2 pl-2 p-1 rounded-lg text-lg focus:outline-none bg-slate-200 dark:bg-slate-700 border-2 border-slate-400 dark:border-slate-600 dark:hover:border-slate-500 hover:border-slate-600 focus:border-slate-600 dark:hover:focus-slate-500 text-slate-800 caret-slate-800" >
                 <input bind:value={githubHandle} type="text" placeholder="Your Github handle" class="w-full h-10 lg:h-12 m-2 pl-2 p-1 rounded-lg text-lg focus:outline-none bg-slate-200 dark:bg-slate-700 border-2 border-slate-400 dark:border-slate-600 dark:hover:border-slate-500 hover:border-slate-600 focus:border-slate-600 dark:hover:focus-slate-500 text-slate-800 caret-slate-800" >
                 <button on:click={requestAccess} class="w-2/3 h-12 m-4 flex justify-center items-center font-bold text-sm lg:text-xl rounded-xl bg-slate-400 text-slate-700 shadow-lg shadow-slate-600/75 border-2 border-slate-600 hover:bg-slate-300 hover:scale-105 transition-all" >
-                    { requestedDev? "We got you :)" : "Access the code" }
+                    { requestedDev? "We got you :)" : "Become beta tester" }
                     <!-- github -->
                     <a href="#!" class="mx-4 text-slate-600 hover:text-slate-800 dark:text-slate-600 dark:hover:text-slate-500 transition-all">
                         <svg
