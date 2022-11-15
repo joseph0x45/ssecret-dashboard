@@ -1,6 +1,6 @@
 <script lang="ts" >
     import axios from "axios"
-    const authUrl = "https://web-production-9c04.up.railway.app/auth/"
+    const authUrl = "https://web-production-4407.up.railway.app/auth/"
     const specialChars = ["!", "@", "#", "$", "%", "&", "*"]
     let authState = "Register"
     let err : [boolean | null | undefined , String]  = [false, ""]

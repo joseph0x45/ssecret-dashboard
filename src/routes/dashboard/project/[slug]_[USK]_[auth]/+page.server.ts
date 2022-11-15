@@ -4,7 +4,7 @@ import type { PageData } from './$types';
 export let data: PageData;
 import Cryptr from 'cryptr';
 import axios from 'axios';
-const fetch_secrets_url = 'https://web-production-9c04.up.railway.app/project/fetch/secrets';
+const fetch_secrets_url = 'https://web-production-4407.up.railway.app/project/fetch/secrets';
 const SSEK = 'sup3rs3cr3t4pp';
 const decrypter = new Cryptr(SSEK);
 

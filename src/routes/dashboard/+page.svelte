@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	const api_url = 'https://web-production-9c04.up.railway.app/project/create';
-	const fetch_url_endpoint = 'https://web-production-9c04.up.railway.app/project/fetch';
+	const api_url = 'https://web-production-4407.up.railway.app/project/create';
+	const fetch_url_endpoint = 'https://web-production-4407.up.railway.app/project/fetch';
 	import axios from 'axios';
 	import ProjectBox from '../../components/ProjectBox.svelte';
 	// import Footer from "../../components/Footer.svelte"
@@ -96,7 +96,7 @@
 				projectName = '';
 			})
 			.catch((errResponse) => {
-				const { status, data } = errResponse.response;
+				const { data } = errResponse.response;
 				alert(data.message);
 			});
 	}
