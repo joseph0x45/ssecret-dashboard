@@ -1,5 +1,5 @@
 <script lang="ts">
-	const api_url = "https://web-production-4407.up.railway.app/project/create/secret"
+	const api_url = "https://ssecret-api-production.up.railway.app/project/create/secret"
 
 	import type { PageData } from './$types';
 	import { secrets } from '../../../../stores/stores';
