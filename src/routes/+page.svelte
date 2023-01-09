@@ -23,6 +23,13 @@
 
 </script>
 
+<div class=" flex text-white text-xl justify-center items-center bg-red-500 h-24" >
+   <div class=" flex justify-center flex-col items-center">
+     <h1 class=" " >SuperSecret is being rewritten in Rust. Why? because it's blazingly fast</h1>
+     <h1>We'll be back in March</h1>
+     <a href="#dev" class="underline hover:text-sky-700" >Join the waitlist to be notified</a>
+   </div>
+</div>
 <body class="z-10 bg-slate-100 dark:bg-slate-800 " >
 
     <!-- blur nav -->
@@ -49,9 +56,9 @@
             
         </div>
         <div class="col-span-3 pt-8 pb-32 md:py-0  lg:col-span-1 flex justify-center items-center" >
-            <button on:click={ ()=>{ window.location.href="/auth" } } class=" text-xl font-bold p-3 rounded-xl shadow-md hover:scale-105 hover:-translate-y-1 transition-all shadow-sky-400/50 dark:shadow-sky-500 bg-sky-600 dark:bg-sky-400 text-white dark:text-slate-800 hover:bg-white dark:hover:bg-slate-100 hover:text-sky-600 dark:hover:text-sky-800 "  >
+            <a href="#dev"  class=" text-xl font-bold p-3 rounded-xl shadow-md hover:scale-105 hover:-translate-y-1 transition-all shadow-sky-400/50 dark:shadow-sky-500 bg-sky-600 dark:bg-sky-400 text-white dark:text-slate-800 hover:bg-white dark:hover:bg-slate-100 hover:text-sky-600 dark:hover:text-sky-800 "  >
                 Get Started
-            </button>
+            </a>
         </div>
 
         <!-- svg divider waves styles -->
@@ -81,7 +88,6 @@
                 
                 Basically, what SuperSecret does is encrypt your environment variables on our server using an algorythm that is always improving <br>
 				These variables are then pulled and injected in your local process before your application is run. Ensuring maximum integrity of your data <br>
-				Watch a demo video <a target="_blank" href="https://youtu.be/kO24LcPZoSM" class="text-sky-700 hover:text-sky-600 font-bold underline hover:no-underline" >Here</a>
             </p>
             
         </div>
@@ -166,10 +172,10 @@
 
         <!-- style="background-image: url('./img/layered-waves-haikei.svg')" -->
 
-        <div class="col-span-12 sm:col-span-4" >
+        <div hidden class="col-span-12 sm:col-span-4" >
             <h1 class=" text-center text-5xl md:text-6xl xl:text-[50px] xl:px-8 font-bold text-slate-100 dark:text-slate-300 transition-all " >
                 <!-- bg-gradient-to-tl text-transparent bg-clip-text from-sky-500 via-purple-500 to-pink-500 -->
-                Try the beta RIGHT NOW
+                We'll be back soon
             </h1>
 
             <div class="flex flex-col m-auto justify-center items-center p-4 w-1/2" >
@@ -183,16 +189,16 @@
         <div id="dev" class="col-span-12 sm:col-span-8" >
             <h1 class=" text-center text-3xl xl:text-[50px] px-8 xl:px-32 font-bold mb-8 text-slate-300 " >
                 <!-- bg-gradient-to-tl text-transparent bg-clip-text from-sky-500 via-purple-500 to-pink-500 -->
-                It's Open Source :) <br>
+                Join waitlist <br>
             </h1>
     
             <div class="flex flex-col m-auto justify-center items-center p-4 w-4/5 lg:w-1/2" >
                 <input bind:value={email} type="text" placeholder="Your email" class="w-full h-10 lg:h-12 m-2 pl-2 p-1 rounded-lg text-lg focus:outline-none bg-slate-200 dark:bg-slate-700 border-2 border-slate-400 dark:border-slate-600 dark:hover:border-slate-500 hover:border-slate-600 focus:border-slate-600 dark:hover:focus-slate-500 text-slate-800 caret-slate-800" >
                 <input bind:value={githubHandle} type="text" placeholder="Your Github handle" class="w-full h-10 lg:h-12 m-2 pl-2 p-1 rounded-lg text-lg focus:outline-none bg-slate-200 dark:bg-slate-700 border-2 border-slate-400 dark:border-slate-600 dark:hover:border-slate-500 hover:border-slate-600 focus:border-slate-600 dark:hover:focus-slate-500 text-slate-800 caret-slate-800" >
                 <button on:click={requestAccess} class="w-2/3 h-12 m-4 flex justify-center items-center font-bold text-sm lg:text-xl rounded-xl bg-slate-400 text-slate-700 shadow-lg shadow-slate-600/75 border-2 border-slate-600 hover:bg-slate-300 hover:scale-105 transition-all" >
-                    { requestedDev? "We got you :)" : "Access the code" }
+                    { requestedDev? "We got you :)" : "Join" }
                     <!-- github -->
-                    <a href="#!" class="mx-4 text-slate-600 hover:text-slate-800 dark:text-slate-600 dark:hover:text-slate-500 transition-all">
+                    <!-- <a href="#!" class="mx-4 text-slate-600 hover:text-slate-800 dark:text-slate-600 dark:hover:text-slate-500 transition-all">
                         <svg
                           aria-hidden="true"
                           focusable="false"
@@ -207,7 +213,9 @@
                             fill="currentColor"
                             d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
                           ></path>
-                        </svg></button>
+                        </svg>
+                    </a> -->
+                </button>
             </div>
         </div>
 
